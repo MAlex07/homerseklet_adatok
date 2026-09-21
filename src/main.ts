@@ -2,7 +2,8 @@ import type { Homerseklet } from "./Homerseklet.js";
 
 document.addEventListener("DOMContentLoaded", ()=>{
   loadData()
-  newData()
+  
+  document.getElementById('weatherForm')?.addEventListener('submit', newData)
 });
 
 const API_KEY = 'https://petrik-idojaras-default-rtdb.europe-west1.firebasedatabase.app/.json';
@@ -31,6 +32,14 @@ async function loadData() {
 
 }
 
-async function newData() {
-  
+async function newData(e:SubmitEvent) {
+  e.preventDefault();
+
+  const dataForm = document.getElementById('weatherForm') as HTMLFormElement;
+  const formData = new FormData(dataForm);
+
+  const ujData = {
+    day: formData.get('day') ?? '',
+    temperature: formData.get('temperature') ?? '',
+  }
 }
