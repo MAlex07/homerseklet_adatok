@@ -1,4 +1,5 @@
 import type { Homerseklet } from "./Homerseklet.js";
+import 'bootstrap/dist/css/bootstrap.css';
 
 document.addEventListener("DOMContentLoaded", ()=>{
   loadData()
@@ -40,6 +41,22 @@ async function newData(e:SubmitEvent) {
 
   const ujData = {
     day: formData.get('day') ?? '',
-    temperature: formData.get('temperature') ?? '',
+    temperature: Number(formData.get('temperature')),
+  };
+
+  const response = await fetch(API_KEY,{
+    method: 'POST',
+    body: JSON.stringify(ujData),
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  });
+
+  if(!response.ok){
+    throw new Error('Hiba a lekérs során');
   }
+
+  dataForm.reset();
+  loadData();
+
 }

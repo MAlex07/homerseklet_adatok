@@ -13,14 +13,14 @@
 
     <form id="weatherForm">
       <label for="nap">Add meg a napot</label><br>
-      <input type="text" id="nap"><br>
+      <input type="text" id="nap" name="day"><br>
       <label for="temp">Add meg hány fok volt aznap</label><br>
-      <input type="number" id="temp"><br>
+      <input type="number" id="temp" name="temperature"><br>
       <button type="submit" id="kuldes">Küldés</button>
     </form>
 
-    <div>
-      <table id="" class="table-bordered">
+    <div class="container">
+      <table id="weatherTable" class="table-bordered">
         
         <tbody id="idojaras">
           <th id="thnap">Nap</th>
@@ -30,7 +30,5 @@
     </div>
 
     <script type="module" src="/src/main.ts"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>
